@@ -6,8 +6,13 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title: string = "Angular";
+  name: string = "Shivanand";
 
   changeTitle(newTitle: string): void {
     this.title = newTitle;
+  }
+
+  textUpdated(value: string): void {
+    this.name = value;
   }
 }
