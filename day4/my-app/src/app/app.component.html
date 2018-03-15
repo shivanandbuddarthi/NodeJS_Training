@@ -1,21 +1,11 @@
-<h1>Welcome to the {{title}} World!!!</h1>
+<h1>{{title}}</h1>
 
-<button class="btn btn-primary" (click)="changeTitle('Shivanand')">Click Me</button>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <button class="btn btn-group btn-primary" routerLink="/home">Home</button>
+        <button class="btn btn-group btn-primary" routerLink="/products">Products</button>
+    </div>
+</nav>
 
-<br/>
-<!-- without ngModel
-<input type="text" [value]="name" #txtName (keyup)="textUpdated(txtName.value)" />
--->
 
-<!-- with ngModel and event binding
-<input type="text" [value]="name" ngModel #txtName="ngModel" (keyup)="textUpdated(txtName)" />-->
-
-<!-- with input-output-binding -->
-<input type="text" [(ngModel)]="name">
-<span>{{name}}</span>
-
-<!--
-    to create a table
-    table#tbl.table>(tr>td*2)*2
-
--->
+<router-outlet></router-outlet>

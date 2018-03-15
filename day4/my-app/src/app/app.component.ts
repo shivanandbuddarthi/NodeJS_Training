@@ -5,14 +5,14 @@ import { Component } from "@angular/core";
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title: string = "Angular";
-  name: string = "Shivanand";
+  title: string = "Welcome to Angular World!!!";
+  /*name: string = "Shivanand";*/
 
-  changeTitle(newTitle: string): void {
+  /*changeTitle(newTitle: string): void {
     this.title = newTitle;
   }
 
   textUpdated(value: string): void {
     this.name = value;
-  }
+  }*/
 }

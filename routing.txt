@@ -1,0 +1,15 @@
+Route: class
+	path & component
+
+Routes: collection
+[{path:'',component:''},{}]
+
+RouterL service
+Register all routes to Router serivce
+
+RouterModule: to configure the routes
+
+rotuerLink(attribute)
+router-outlet(elemet)
+
+ActivatedRoute: service

@@ -1,0 +1,55 @@
+<div class="panel panel-primary">
+
+  <div class="panel panel-heading">
+    All Products
+  </div>
+
+  <div class="panel panel-body">
+
+    <div class="row">
+      <div class="col-md-2">
+        Filter By:&nbsp;&nbsp;
+      </div>
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="filterText" placeholder="Enter Name of Product to filter">
+      </div>
+    </div>
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead style="background-color: burlywood">
+          <tr>
+            <td>Image</td>
+            <td>Name</td>
+            <td>Code</td>
+            <td>Availability</td>
+            <td>Price</td>
+            <td>Rating</td>
+            <td>Delete</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products|productFilter:filterText">
+            <td>
+              <a href="javascript:void(0)" [routerLink]="['/products',p.productId]">
+                <!-- same as /products/{{p.productId}}-->
+                <img [src]="p.imageUrl" [style.margin.px]="imgMargin" [style.width.px]="imgWidth" alt="" [title]="p.productName">
+              </a>
+            </td>
+            <td>{{p.productName}}</td>
+            <td>{{p.productCode}}</td>
+            <td>{{p.releaseDate}}</td>
+            <td>{{p.price | currency : 'INR'}}</td>
+            <td>{{p.starRating}} </td>
+            <td>
+              <button class="btn-xs btn-danger">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
