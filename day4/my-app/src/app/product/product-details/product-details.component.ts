@@ -19,18 +19,26 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.products = this._productService.getProducts();
-    this._activatedRouter.params.subscribe((paramsData: Params) => {
-      try {
-        this.productId = parseInt(paramsData["pid"]);
-      }
-      catch (err) {
-      }
-      this.products.forEach(p => {
-        if (this.productId && p.productId === this.productId)
-          this.product = p;
-      });
-    });
+
+    this._productService.getProducts()
+      .subscribe(
+        (data) => {
+          this.products = data;
+          this._activatedRouter.params.subscribe((paramsData: Params) => {
+            try {
+              this.productId = parseInt(paramsData["pid"]);
+            }
+            catch (err) {
+            }
+            this.products.forEach(p => {
+              if (this.productId && p.productId === this.productId)
+                this.product = p;
+            });
+          });
+        }
+      );
+
+
   }
 
 

@@ -8,14 +8,17 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-  products: Product[];
+  products: Product[] = [];
   filterText: string = "";
   imgMargin: number = 2;
   imgWidth: number = 20;
   constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    this.products = this._productService.getProducts();
+    this._productService.getProducts()
+      .subscribe(
+        (data) => this.products = data
+      );
   }
 
 }
