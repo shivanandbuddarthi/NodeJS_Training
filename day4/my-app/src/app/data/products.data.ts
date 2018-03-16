@@ -1,4 +1,4 @@
-export let products: any = [
+export let productsArr: any = [
     {
         "productId": 1,
         "productName": "Leaf Rake",
